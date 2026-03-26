@@ -7,6 +7,7 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import Image from "next/image"
 
 export default async function Nav() {
   const [regions, locales, currentLocale] = await Promise.all([
@@ -17,21 +18,80 @@ export default async function Nav() {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
-        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
+      <header className="relative h-24 mx-auto border-b duration-200 bg-white border-ui-border-base">
+        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular m-0 p-0">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
             </div>
           </div>
 
+          
+
+          <div className="flex items-center h-full gap-x-6">
+            <LocalizedClientLink
+              href="/"
+              className="text-sm font-bold hover:text-ui-fg-base uppercase no-underline small:pr-4"
+              data-testid="secondary-links"
+            >
+              New arrivals
+            </LocalizedClientLink>
+          </div>
+          <div className="flex items-center h-full gap-x-6">
+            <LocalizedClientLink
+              href="/"
+              className="text-sm font-bold hover:text-ui-fg-base uppercase no-underline small:pr-4"
+              data-testid="secondary-links"
+            >
+              Collections
+            </LocalizedClientLink>
+          </div>
+          <div className="flex items-center h-full gap-x-6">
+            <LocalizedClientLink
+              href="/"
+              className="text-sm font-bold hover:text-ui-fg-base uppercase no-underline small:pr-4"
+              data-testid="secondary-links"
+            >
+              Shop
+            </LocalizedClientLink>
+          </div>
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              Medusa Store
+              <Image src="/icons/urbanflaky-logo-png.png" alt="Urban Flaky" width={140} height={40}
+                priority className="object-cointain w-auto"
+            />
+            </LocalizedClientLink>
+          </div>
+
+           <div className="flex items-center h-full gap-x-6 small:pl-4">
+            <LocalizedClientLink
+              href="/"
+              className="text-sm font-bold hover:text-ui-fg-base uppercase no-underline"
+              data-testid="secondary-links"
+            >
+              Contact
+            </LocalizedClientLink>
+          </div>
+          <div className="flex items-center h-full gap-x-6 small:pl-5">
+            <LocalizedClientLink
+              href="/"
+              className="text-sm font-bold hover:text-ui-fg-base uppercase no-underline "
+              data-testid="secondary-links"
+            >
+              About Us
+            </LocalizedClientLink>
+          </div>
+          <div className="flex items-center h-full gap-x-6 small:pl-5">
+            <LocalizedClientLink
+              href="/"
+              className="text-sm font-bold hover:text-ui-fg-base uppercase no-underline"
+              data-testid="secondary-links"
+            >
+              Blog
             </LocalizedClientLink>
           </div>
 

@@ -5,11 +5,12 @@ import Hero from "@modules/home/components/hero"
 import HeroSlider from "@modules/home/components/hero-slider"
 import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
+import CollectionsSlider from "@modules/home/components/collections-slider/collections-slider"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Urbanflaky | Premium T-Shirts, Shirts & Much More for Men, Women & Kids",
   description:
-    "A performant frontend ecommerce starter template with Next.js 15 and Medusa.",
+    "Discover premium fashion for the whole family at Urbanflaky. Shop stylish and comfortable T-shirts, shirts, suits, and more for men, women, and kids. Explore our exclusive collections and upgrade your wardrobe with trend-forward essentials. Fast shipping and quality guaranteed!",
 }
 
 export default async function Home(props: {
@@ -22,7 +23,7 @@ export default async function Home(props: {
   const region = await getRegion(countryCode)
 
   const { collections } = await listCollections({
-    fields: "id, handle, title",
+    fields: "id, handle, title, metadata",
   })
 
   if (!collections || !region) {
@@ -33,7 +34,8 @@ export default async function Home(props: {
     <>
       {/* <Hero /> */}
       <HeroSlider />
-      <div className="py-12">
+      <CollectionsSlider />
+      <div className="py-6">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
