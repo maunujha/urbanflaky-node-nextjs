@@ -52,7 +52,7 @@
 
 @layer components {
   .content-container {
-    @apply max-w-[1440px] w-full mx-auto px-6;
+    @apply max-w-[1440px] w-full mx-auto;
   }
 
   .contrast-btn {
@@ -110,4 +110,7 @@
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
   }
+}
+body, a, button, input, select, textarea , .contrast-btn , .text-xsmall-regular, .text-small-regular, .text-small-semi, .text-base-regular, .text-base-semi, .text-large-regular, .text-large-semi, .text-xl-regular, .text-xl-semi, .text-2xl-regular, .text-2xl-semi, .text-3xl-regular, .text-3xl-semi , .feature-title , .interactive-link , .content-container , p, h1, h2, h3, h4, h5, h6 {
+  color: #333333;
 }

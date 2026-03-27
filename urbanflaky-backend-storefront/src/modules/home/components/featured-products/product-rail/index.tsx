@@ -28,8 +28,8 @@ export default async function ProductRail({
 
   return (
     <div className="content-container py-12 small:py-6">
-      <div className="flex justify-between mb-8">
-        <Text className="txt-xlarge">{collection.title}</Text>
+      <div className="flex justify-between mb-8 pl-3">
+        <Text className="font-sans text-3xl font-bold feature-title">{collection.title}</Text>
         <InteractiveLink href={`/collections/${collection.handle}`}>
           View all
         </InteractiveLink>

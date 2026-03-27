@@ -35,8 +35,8 @@ export default async function Home(props: {
       {/* <Hero /> */}
       <HeroSlider />
       <CollectionsSlider />
-      <div className="py-6">
-        <ul className="flex flex-col gap-x-6">
+      <div className="py-6 features-container">
+        <ul className="flex flex-col gap-x-6 list-none">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
       </div>

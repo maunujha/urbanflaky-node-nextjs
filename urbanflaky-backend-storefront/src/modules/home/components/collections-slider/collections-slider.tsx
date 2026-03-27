@@ -30,7 +30,7 @@ useEffect(() => {
 
   return (
     <section className="py-10 px-4 md:px-10">
-      <h2 className="text-3xl font-bold mb-6">Collections</h2>
+      <h2 className="font-sans text-3xl font-bold mb-6">Our Latest Collections</h2>
 
       <Swiper
         modules={[Autoplay]}
